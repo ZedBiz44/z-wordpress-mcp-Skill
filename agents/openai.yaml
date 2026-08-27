@@ -1,0 +1,4 @@
+interface:
+  display_name: "Z WordPress MCP"
+  short_description: "Safely read and manage authorized WordPress sites"
+  default_prompt: "Use $z-wordpress-mcp to complete this authorized WordPress site task through the approved MCP workflow."
