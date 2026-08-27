@@ -49,9 +49,10 @@ Date: 2026-08-27 | Prepared by: Cody | Status: Release Candidate
 
 ## Completion Evidence
 
-- Structural validation: required before pilot.
-- Wrapper test: required before pilot.
+- Structural validation: repository and deployable package passed the current `z-ai-skill-developer` validator on 2026-08-27.
+- Wrapper test: mocked discovery and wrong-domain rejection passed on 2026-08-27.
 - Trigger record: `governance/pilot-trigger-test-record.md`.
 - Pilot result: pending.
-- Notion SOP: pending creation in `AI-Agent-Skills-SOPs`.
+- GitHub rollout record: https://github.com/ZedBiz44/z-wordpress-mcp-Skill/issues/1
+- Notion SOP: https://app.notion.com/p/3c9a3e33d58181a281b3ef41284c727b
 - Final approval: required before wider rollout.
