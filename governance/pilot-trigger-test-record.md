@@ -9,7 +9,7 @@ Date: 2026-08-27 | Tester: Pending | Status: Planned
 - Package: `dist/z-wordpress-mcp`
 - Platform: approved ZedBiz OpenClaw test agent
 - Installation: `/home/node/.openclaw/skills/z-wordpress-mcp`
-- Commit: record the tested commit before pilot.
+- Commit: install the current release-candidate commit and record its immutable SHA before pilot execution.
 
 ## Discovery Checks
 
