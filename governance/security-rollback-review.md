@@ -1,6 +1,6 @@
 # Z WordPress MCP Security and Rollback Review
 
-Date: 2026-08-27 | Reviewer: Cody | Status: Release Candidate Review
+Date: 2026-08-27 | Reviewer: Cody | Status: Approved for Victor and Wilma
 
 ## Trust and Inputs
 
@@ -27,16 +27,19 @@ Date: 2026-08-27 | Reviewer: Cody | Status: Release Candidate Review
 
 | Review point | Decision and evidence |
 |---|---|
-| Last known-good | Existing `wordpress-mcp` skill in `ZedBiz-openclaw-ai-agents-vps1-vps2`. |
-| Pilot location | One approved OpenClaw testing agent. |
+| Current known-good | Release-candidate commit `6e06094c1d0553ba06d85254ab8047547cc239e7`. |
+| Pilot location | Wilma on VPS1. |
 | Rollback owner | ZedBiz technical administrator. |
-| Procedure | Stop the pilot, remove or replace `z-wordpress-mcp`, restore the prior skill folder and invocation reference, restart or refresh skill discovery if required, then run a read-only discovery check. |
+| Tested procedure | Restore the prior package, verify read-only discovery, restore `z-wordpress-mcp`, and verify discovery again. |
+| Rollback result | Passed on Wilma before the prior live skill was retired. |
+| Current procedure | Reinstall the exact tested `z-wordpress-mcp` package from the immutable repository commit, verify checksums, then run read-only discovery. |
 | Immediate rollback | Token exposure, wrong-site routing, unauthorized write, failed post-write verification, or repeated endpoint failure after a confirmed regression. |
-| Evidence | Installed source reference, discovery result, safe read result, and incident or test record. |
+| Evidence | `governance/pilot-trigger-test-record.md` and GitHub issue 1. |
 
 ## Approval
 
 - Reviewer: Cody
-- Human approver: ZedBiz business owner
-- Approval date: pending
-- Open risk: real OpenClaw pilot and rollback proof remain pending.
+- Human approver: Jack
+- Approval date: 2026-08-27 MDT
+- Deployment: approved and verified for Victor and Wilma
+- Remaining limitation: Victor cannot execute the wrapper until the approved 1Password CLI and service-account credential path are installed; the safe-stop behavior is verified.
