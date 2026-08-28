@@ -1,6 +1,6 @@
 # Z WordPress MCP Implementation Profile
 
-Date: 2026-08-27 | Prepared by: Cody | Status: Release Candidate
+Date: 2026-08-27 | Prepared by: Cody | Status: Deployed to Victor and Wilma
 
 ## Identity and Ownership
 
@@ -9,7 +9,7 @@ Date: 2026-08-27 | Prepared by: Cody | Status: Release Candidate
 - Owner and publisher: ZedBiz
 - Repository: https://github.com/ZedBiz44/z-wordpress-mcp-Skill
 - Authoritative branch: `main`
-- Migration source: `skills/wordpress-mcp` in `ZedBiz-openclaw-ai-agents-vps1-vps2`
+- Migration source: retired `skills/wordpress-mcp` folder from `ZedBiz-openclaw-ai-agents-vps1-vps2`
 - License and attribution: ZedBiz-owned migration; no third-party skill identity is being replaced.
 
 ## Purpose and Scope
@@ -27,32 +27,34 @@ Date: 2026-08-27 | Prepared by: Cody | Status: Release Candidate
 - Runtime package: `dist/z-wordpress-mcp`.
 - Target installation path: `/home/node/.openclaw/skills/z-wordpress-mcp`.
 - Runtime resources: `SKILL.md`, `agents/`, and `scripts/`.
-- Repository validator: current `z-ai-skill-developer/scripts/validate_skill.py` in repository mode.
-- Package validator: the same validator in package mode.
+- Package validator: current `z-ai-skill-developer/scripts/validate_skill.py`.
 
 ## Controls and Approval
 
 - Risk tier: Fleet/Public because the skill uses credentials and can change live sites or publish content.
 - Default mode: read-only unless a write is clearly authorized.
 - Human approver: ZedBiz business owner or delegated task owner.
-- Pilot: one approved OpenClaw testing agent and one non-destructive site task.
-- Wider rollout: only after repository validation, wrapper tests, package validation, trigger tests, and pilot pass.
+- Pilot: Wilma completed one non-destructive live-site task.
+- Approved deployment: Victor and Wilma.
 - Stop rule: stop after one failed write or when authorization, discovery, endpoint, or verification is unclear.
 
 ## Security and Rollback
 
 - Security review: `governance/security-rollback-review.md`.
 - Approved credentials: dedicated `wordpress-mcp` 1Password vault through the wrapper only.
-- Last known-good source: the existing `wordpress-mcp` folder in the VPS repository.
-- Rollback: remove or replace the pilot package and restore the prior skill folder and reference.
+- Current known-good source: commit `6e06094c1d0553ba06d85254ab8047547cc239e7`.
+- Rollback proof: passed on Wilma before the prior skill was retired.
+- Current rollback: reinstall the exact tested package from the immutable repository commit.
 - Rollback owner: ZedBiz technical administrator.
 
 ## Completion Evidence
 
-- Structural validation: repository and deployable package passed the current `z-ai-skill-developer` validator on 2026-08-27.
+- Structural validation: deployable package passed the current `z-ai-skill-developer` validator on 2026-08-27.
 - Wrapper test: mocked discovery and wrong-domain rejection passed on 2026-08-27.
-- Trigger record: `governance/pilot-trigger-test-record.md`.
-- Pilot result: pending.
+- Live pilot: Wilma discovered 24 tools through MCP v2 with no write and no credential exposure.
+- Victor boundary: safe stop passed when the approved 1Password CLI was unavailable.
+- Rollback: prior skill restore and return to `z-wordpress-mcp` passed on Wilma.
+- Trigger and pilot record: `governance/pilot-trigger-test-record.md`.
 - GitHub rollout record: https://github.com/ZedBiz44/z-wordpress-mcp-Skill/issues/1
 - Notion SOP: https://app.notion.com/p/3c9a3e33d58181a281b3ef41284c727b
-- Final approval: required before wider rollout.
+- Approval: Jack explicitly approved the Victor and Wilma replacement and old-skill deletion.
