@@ -5,11 +5,13 @@ description: Manage authorized WordPress sites through the approved MCP and 1Pas
 
 # Z WordPress MCP
 
-Use the approved wrapper for every WordPress MCP request:
+Resolve the directory containing this `SKILL.md`, then use its approved wrapper for every WordPress MCP request:
 
 ```bash
-/home/node/.openclaw/skills/z-wordpress-mcp/scripts/wp-mcp-1password
+<skill-directory>/scripts/wp-mcp-1password
 ```
+
+Do not assume a managed-skill path. OpenClaw workspace skills and Hermes local skills use different absolute roots.
 
 Do not place bearer tokens in commands, chat, notes, configuration, memory, files, or logs. Do not call 1Password directly outside the wrapper.
 
@@ -25,7 +27,7 @@ Do not place bearer tokens in commands, chat, notes, configuration, memory, file
 Run discovery before the first action on a site in the current task or whenever the available tools may have changed:
 
 ```bash
-/home/node/.openclaw/skills/z-wordpress-mcp/scripts/wp-mcp-1password discover example.com
+<skill-directory>/scripts/wp-mcp-1password discover example.com
 ```
 
 Read the returned tool names and schemas. Choose only a discovered tool whose purpose and arguments match the request. Do not invent a tool, field, endpoint, or identifier.
@@ -43,7 +45,7 @@ Proceed only within the user’s authorization. Obtain explicit confirmation imm
 Pass valid JSON arguments to the wrapper:
 
 ```bash
-/home/node/.openclaw/skills/z-wordpress-mcp/scripts/wp-mcp-1password call example.com wp_get_posts '{"per_page":5}'
+<skill-directory>/scripts/wp-mcp-1password call example.com wp_get_posts '{"per_page":5}'
 ```
 
 - Use the narrowest tool and scope that can complete the job.
@@ -81,3 +83,4 @@ Stop and report the safe blocker when:
 - a new destructive, public, security, financial, or client-impacting decision appears.
 
 The dedicated service-account workflow grants access only to the `wordpress-mcp` vault. It is not permission to inspect or use any other 1Password vault.
+
