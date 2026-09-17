@@ -1,0 +1,22 @@
+{
+  "scope": "PR candidate; not installed or deployed",
+  "package": "z-wordpress-mcp",
+  "files": [
+    {
+      "path": "agents/openai.yaml",
+      "sha256": "6b3b274bae44d5c404e106eabd7eb0fb0f5996901aef67328395feaf3ac86ac1"
+    },
+    {
+      "path": "scripts/build_package.sh",
+      "sha256": "d5780226b69871b03678cee3b3aeadf387d42a5264e4c56320fbc1021c7720db"
+    },
+    {
+      "path": "scripts/wp-mcp-1password",
+      "sha256": "817a72a5ebdd3bde3d064c6d403a6cc502ea67b1340b4f4871326611dcd6db92"
+    },
+    {
+      "path": "SKILL.md",
+      "sha256": "3a1ca91b54b4d7b744ab1849a1325d3d93192df52cc5b2810f9175e4be839427"
+    }
+  ]
+}

@@ -51,7 +51,8 @@ Pass valid JSON arguments to the wrapper:
 - Use the narrowest tool and scope that can complete the job.
 - Preserve existing content, metadata, status, and identifiers unless the request requires a change.
 - Avoid unrelated cleanup or improvements.
-- Stop after one failed write attempt unless the cause is clear and a safe correction is available.
+- The wrapper discovers a working endpoint with read-only tools/list before each call, then submits tools/call once. Endpoint fallback is allowed only during discovery.
+- After a failed, timed-out, invalid or error response, do not rerun the write or switch endpoints. Read the affected object independently to determine whether it already changed. If that cannot be established, stop and report the uncertain outcome. Retry only when read-back proves it is safe and the action remains authorized.
 
 ## 5. Verify and Report
 
